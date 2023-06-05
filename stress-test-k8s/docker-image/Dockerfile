@@ -24,7 +24,7 @@ RUN pip install -r /locust-tasks/requirements.txt
 
 # Init url.json
 # Change is locally after clone
-RUN echo '{"ORDER_URL":"http://localhost:5000","PAYMENT_URL":"http://localhost:5001","STOCK_URL":"http://localhost:5002"}' > /locust-tasks/url.json
+RUN echo '{"ORDER_URL":"http://localhost:5000","PAYMENT_URL":"http://localhost:5001","STOCK_URL":"http://localhost:5002"}' > /locust-tasks/urls.json
 
 # Expose the required Locust ports
 EXPOSE 5557 5558 8089
