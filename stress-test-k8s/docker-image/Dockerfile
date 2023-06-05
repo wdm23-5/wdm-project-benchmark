@@ -16,14 +16,15 @@
 # Start with a base image Python 3.9.12 Debian 11 (bullseye) slim
 FROM python:3.9.12-slim-bullseye
 
-# Add the licenses for third party software and libraries
-# ADD licenses /licenses
-
 # Add the external tasks directory into /tasks
-ADD locust-tasks /locust-tasks
+COPY ./locust-tasks /locust-tasks
 
 # Install the required dependencies via pip
 RUN pip install -r /locust-tasks/requirements.txt
+
+# Init url.json
+# Change is locally after clone
+RUN echo '{"ORDER_URL":"http://localhost:5000","PAYMENT_URL":"http://localhost:5001","STOCK_URL":"http://localhost:5002"}' > /locust-tasks/url.json
 
 # Expose the required Locust ports
 EXPOSE 5557 5558 8089

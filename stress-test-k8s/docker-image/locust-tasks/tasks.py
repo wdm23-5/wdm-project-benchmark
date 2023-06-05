@@ -7,7 +7,7 @@ from typing import List
 from locust import HttpUser, SequentialTaskSet, between, task
 
 # replace the example urls and ports with the appropriate ones
-with open(os.path.join('..', 'urls.json')) as f:
+with open(os.path.join('.', 'urls.json')) as f:
     urls = json.load(f)
     ORDER_URL = urls['ORDER_URL']
     PAYMENT_URL = urls['PAYMENT_URL']
