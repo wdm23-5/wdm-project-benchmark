@@ -29,4 +29,4 @@ echo "$LOCUST $LOCUS_OPTS"
 
 ls /locust-tasks
 
-$LOCUST "$LOCUS_OPTS"
+$LOCUST $LOCUS_OPTS
